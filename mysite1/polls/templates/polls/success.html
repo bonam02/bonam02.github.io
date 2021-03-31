@@ -1,0 +1,18 @@
+
+{% block content %}
+<div class="container py-5">
+  <h1>Your form is ready</h1>
+  <form method="POST">
+    {% csrf_token %}
+
+  </form>
+<p>List of items:</p>
+  {%for element in list_data%}
+    <br>
+    {% for key,value in element.items %}
+        {{value}}
+    {% endfor %}
+{% endfor %}
+</div>
+
+{% endblock %}
